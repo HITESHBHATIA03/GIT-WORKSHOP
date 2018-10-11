@@ -1,0 +1,48 @@
+NAME: Sagar Sidhwa
+ROLL NO: 53
+CLASS: D7A
+
+Problem 2: To find an element in the array using Binary Search
+
+Code:   #include<stdio.h>
+	int main()
+	{
+    	int i,n,high,low,mid,search,a[100];
+    	printf("\nEnter the number of elements in the array: ");
+    	scanf("%d",&n);
+    	printf("\nEnter the %d integers ",n);
+    	for(i=0;i<=n-1;i++)
+    	{
+    	    scanf("%d",&a[i]);
+    	}
+    	printf("\nEnter the element to be searched: ");
+    	scanf("%d",&search);
+    	high=0;
+    	low=n-1;
+    	mid=(high+low)/2;
+    	while(high=low)
+    	{
+        	if(a[mid]<search)
+            	high=mid+1;
+        	else if(a[mid]==search)
+        	{
+            	printf("\n%d is present at location %d",search,mid);
+            	break;
+        	}
+        	else
+            	low=mid-1;
+        	mid=(high+low)/2;
+    	}
+    	if(high>low)
+        	printf("\nNot found!! %d is not present in the list",search);
+    	return 0;
+	}
+
+Output:Enter the number of elements in the array: 5
+       Enter the 5 integers: 2
+       1
+       4 
+       57
+       3
+       Enter the element to be searched: 57
+       57 is present at location 4  
